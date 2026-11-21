@@ -1,7 +1,7 @@
 // Service worker : garde toute l'application sur l'appareil pour un usage sans Internet.
 importScripts('./offline-list.js');
-const APP = 'tasmi-app-v1';   // petits fichiers de l'app : réseau d'abord, copie locale sinon
-const BIG = 'tasmi-big-v1';   // moteur, modèle, polices : copie locale d'abord
+const APP = 'tasmi-app-v2';   // petits fichiers de l'app : réseau d'abord, copie locale sinon
+const BIG = 'tasmi-big-v2';   // moteur, runtime, polices : copie locale d'abord
 
 async function fill(name, urls) {
   const c = await caches.open(name);
@@ -22,11 +22,13 @@ self.addEventListener('activate', e => {
     .then(() => self.clients.claim()));
 });
 
-const isBig = p => /\/(vendor|models|fonts)\//.test(p);
+const isBig = p => /\/(vendor|fonts|tilawa\/v1\/runtime)\//.test(p);
+// Le modèle et la référence sont mis en cache par le moteur lui-même : on ne les garde pas une seconde fois.
+const isEngineData = p => /\/tilawa\/v1\/(models|reference)\//.test(p);
 
 self.addEventListener('fetch', e => {
   const req = e.request, url = new URL(req.url);
-  if (req.method !== 'GET' || url.origin !== location.origin) return;
+  if (req.method !== 'GET' || url.origin !== location.origin || isEngineData(url.pathname)) return;
   e.respondWith((async () => {
     if (isBig(url.pathname)) {
       const hit = await caches.match(req, { ignoreSearch: true });

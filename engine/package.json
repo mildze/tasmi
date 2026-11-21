@@ -1,0 +1,9 @@
+{
+  "name": "tasmi-engine",
+  "private": true,
+  "type": "module",
+  "description": "Construit vendor/tilawa.js et copie les fichiers du moteur dans tilawa/v1 (hors ligne).",
+  "scripts": { "build": "node build.mjs" },
+  "dependencies": { "@tilawa/core": "1.0.0-rc.0", "onnxruntime-web": "1.30.0" },
+  "devDependencies": { "esbuild": "^0.28.2" }
+}

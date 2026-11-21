@@ -1,0 +1,41 @@
+{
+ "schema": 1,
+ "ort": "1.30.0",
+ "files": [
+  {
+   "path": "models/spliced-clean-lite/1-int8/manifest.json",
+   "bytes": 8534,
+   "sha256": "3f77f6368421a13ba8b0ca8e1610bd4a84ef3ac7407965d5c3cb9e322479cb30"
+  },
+  {
+   "path": "models/spliced-clean-lite/1-int8/model.onnx",
+   "bytes": 24650054,
+   "sha256": "4974de78d3c35d2542e7a24d99b747e1160d6e31e366fb68492b74a789890f1b"
+  },
+  {
+   "path": "models/spliced-clean/1-int8/manifest.json",
+   "bytes": 11045,
+   "sha256": "eb017b76cdca4261451ef5071acc637b57c5b62ed7ddb36f5daca1a2fc08d2b1"
+  },
+  {
+   "path": "models/spliced-clean/1-int8/model.onnx",
+   "bytes": 67759744,
+   "sha256": "714e98addee73b1b8781ad7d99b6d3c745acd9116638baf4e12891f53a15af1b"
+  },
+  {
+   "path": "reference/ref-v2.json",
+   "bytes": 4749281,
+   "sha256": "f236384ea91e81ad554ba2777bc4073c3ff41e34120343a8a474571c577b7727"
+  },
+  {
+   "path": "runtime/ort/1.30.0/ort-wasm-simd-threaded.jsep.mjs",
+   "bytes": 46851,
+   "sha256": "709853412fd1ffc34247af1e73569227b5b79629c5ca3f59cc39cf7e500e4947"
+  },
+  {
+   "path": "runtime/ort/1.30.0/ort-wasm-simd-threaded.jsep.wasm",
+   "bytes": 28312028,
+   "sha256": "3ad23231b5bd6d9dda55a7f84606315e0bf35b6750c28ee993c987c54cacab0f"
+  }
+ ]
+}
